@@ -1,0 +1,38 @@
+<html>
+<head>
+<style>
+body {
+	background-color: #ADD8E6;
+	margin: 0px;
+	font-family: Garamond, serif;
+	font-size: 20px;
+	text-align: center;
+	}
+</style>
+<script>
+var number= Math.round(Math.random()*100+1);
+function checkGuess () {
+var guess = document.getElementById("guess") .value;
+var msg = "";
+if (guess < number) {
+msg = guess + " was too low. Try again!"
+}
+else if (guess > number) {
+msg = guess + " was too high. Try again!"
+}else {
+msg = guess + " was the number. You win!"
+}
+document.getElementById("output").innerHTML = msg;
+}
+</script>
+</head>
+<body>
+<h1>Number Guessing Game</h1>
+<form>
+Guess a number between 1 and 100: <input type="text" id="guess" size="3"/>
+<button type="button" onclick="checkGuess();">Guess!</button>
+</form>
+<h3 id="output">Guess a number and press the button</h3>
+<img src= "questions.png" width = "400" height = "200"/>
+</body>
+</html>
